@@ -2,12 +2,18 @@ model_list:
   - model_name: my-groq-model
     litellm_params:
       model: groq/llama-3.3-70b-versatile
-      api_key: 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
+      api_key: os.environ/GROQ_API_KEY
+      drop_params: true
 
   - model_name: my-groq-fast
     litellm_params:
       model: groq/llama-3.1-8b-instant
-      api_key: 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
+      api_key: os.environ/GROQ_API_KEY
+      drop_params: true
 
 general_settings:
-  master_key: sk-myproxy-secret123
+  master_key: os.environ/LITELLM_MASTER_KEY
+  drop_params: true
+
+litellm_settings:
+  drop_params: true
